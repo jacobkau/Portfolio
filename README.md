@@ -11,7 +11,6 @@ The portfolio is built using standard web technologies:
 
 The design is responsive, ensuring a smooth user experience on various devices. External resources include:
 - [Font Awesome](https://fontawesome.com/) for icons
-- [EmailJS](https://www.emailjs.com/) for processing the contact form
 - A CDN-hosted CSS for additional styling and animations
 
 ## Features
@@ -20,7 +19,7 @@ The design is responsive, ensuring a smooth user experience on various devices. 
 - **Navigation:** Fixed header with smooth scrolling links to various sections (About, Services, Portfolio, Blog, and Contact).
 - **Dynamic Typing Effect:** Animated text effect introducing the portfolio owner.
 - **Modal Popups:** Interactive modal for displaying detailed blog posts.
-- **Contact Form:** Integrated with EmailJS for sending emails directly from the website.
+- **Contact Form:**
 - **Service & Project Listings:** Sections dedicated to displaying IT services, completed projects, and latest articles.
 
 ## File Structure
@@ -31,7 +30,6 @@ The design is responsive, ensuring a smooth user experience on various devices. 
 ## Setup & Usage
 
 1. **Clone the Repository:**
-y
 Open the Website Locally:
 
 Simply open the index.html file in your favorite web browser. No server setup is required.
@@ -57,8 +55,6 @@ Font Awesome: For scalable icons
 
 Credits
 Jacob Witty: Creator and maintainer of this portfolio.
-
-EmailJS: Service for integrating email functionality in the web form.
 
 Font Awesome: Icon toolkit used throughout the site.
 
