@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="Explore Jacob Witty's Portfolio - Offering IT solutions, online learning, and business networking opportunities.">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="canonical" href="https://jacobwitty.fwh.is/?i=1">
+	<link rel="shortcut icon" href="images/witty.webp" type="image/x-icon">
+	<meta name="google-site-verification" content="ITYVkJPwSmMLoIm_vULRie1vKGMyvDvRYFHIilDqHxo">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+
+	</script>
+	<title>Jacob Witty | Portfolio</title>
+</head>
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	.contact-info {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 10px;
+		margin-top: 10px;
+	}
+
+	.contact-info a {
+		color: #64ffda;
+		text-decoration: none;
+		font-size: 20px;
+		transition: 0.3s;
+	}
+
+	.social-links a,
+	.contact-info:hover {
+		color: #ffffff;
+	}
+
+	/* Modal Background */
+	.modal {
+		display: none;
+		position: fixed;
+		z-index: 1000;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.6);
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		animation: fadeIn 0.3s ease-in-out;
+	}
+
+	/* Modal Content Box */
+	.modal-content {
+		background: #f5f5f5;
+		padding: 25px;
+		border-radius: 12px;
+		max-width: 1200px;
+		width: 90%;
+		text-align: left;
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+		position: relative;
+		color: #333;
+		overflow: auto;
+		max-height: 80vh;
+	}
+
+	/* Close Button */
+	.close-modal {
+		position: absolute;
+		top: 12px;
+		right: 15px;
+		font-size: 24px;
+		font-weight: bold;
+		color: #333;
+		cursor: pointer;
+	}
+
+	#modal-title {
+		text-align: center;
+		/* Centers the text */
+		font-size: 1.8rem;
+		/* Adjusts size */
+		font-weight: bold;
+		/* Makes it stand out */
+		margin-bottom: 15px;
+		/* Adds spacing below */
+	}
+
+
+	.close-modal:hover {
+		color: #e74c3c;
+	}
+
+	/* Modal Image */
+	.modal-img {
+		width: 87%;
+		height: 300px;
+		color: #333;
+		border-radius: 8px;
+		margin-bottom: 15px;
+	}
+
+	/* Ordered List */
+	.modal-content ol {
+		padding-left: 20px;
+	}
+
+	.modal-content ol li {
+		margin-bottom: 10px;
+		font-size: 16px;
+		color: #333;
+	}
+
+	/* Fade-in Effect */
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+
+
+	body {
+		font-family: "Poppins", sans-serif;
+		background-color: #0a192f;
+		color: #ffffff;
+	}
+
+	header {
+		background: #112240;
+		padding: 20px;
+		display: flex;
+		position: fixed;
+		width: 100%;
+		top: 0;
+		z-index: 999;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+	}
+
+	.logo {
+		font-size: 1.8em;
+		font-weight: bold;
+		display: flex;
+		margin-left: 60px;
+		justify-content: center;
+		color: #64ffda;
+	}
+
+	.logo img {
+		height: 50px;
+	}
+
+	nav ul {
+		list-style: none;
+		display: flex;
+	}
+
+	nav ul li {
+		margin: 0 20px;
+	}
+
+	nav ul li a {
+		color: #64ffda;
+		text-decoration: none;
+		font-weight: bold;
+		transition: color 0.3s;
+	}
+
+	nav ul li a:hover {
+		color: #ffffff;
+	}
+
+	.hero-about-container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		width: 97%;
+		margin: 30px auto;
+		padding: 30px;
+		background: #112240;
+		border-radius: 10px;
+	}
+
+	.hero-about-container h1 {
+		font-size: 30px;
+	}
+
+	.hero-about-container h4 {
+		font-size: 25px;
+	}
+
+	#hero {
+		flex: 1;
+		text-align: center;
+		padding: 20px;
+	}
+
+	#hero img {
+		width: 250px;
+		border-radius: 50%;
+		border: 4px solid #64ffda;
+	}
+
+	#about {
+		flex: 1.5;
+		padding: 20px;
+		font-size: 1.3em;
+		background: #112240;
+		border-radius: 10px;
+		font-family: "Courier New", monospace;
+		position: relative;
+	}
+
+	#typed-about {
+		display: inline-block;
+		border-right: 3px solid #64ffda;
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+		white-space: normal;
+		max-width: 100%;
+	}
+
+	@keyframes typing {
+		from {
+			width: 0;
+		}
+		to {
+			width: 100%;
+		}
+	}
+
+	@keyframes blink {
+		50% {
+			border-color: transparent;
+		}
+	}
+
+	section {
+		width: 97%;
+		margin: 30px auto;
+		padding: 30px;
+		background: #112240;
+		border-radius: 10px;
+	}
+
+	h2 {
+		text-align: center;
+		color: #64ffda;
+		margin-bottom: 20px;
+	}
+
+	.portfolio-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 20px;
+		text-align: center;
+		margin-top: 20px;
+	}
+
+	.project {
+		background: #112240;
+		padding: 15px;
+		border-radius: 10px;
+		transition: 0.3s;
+	}
+
+	.project img {
+		width: 100px;
+		height: 100px;
+		object-fit: cover;
+		border-radius: 5px;
+	}
+
+	.project h3 {
+		margin: 10px 0;
+	}
+
+	.project a {
+		display: inline-block;
+		margin-top: 10px;
+		padding: 8px 15px;
+		background: #64ffda;
+		color: #112240;
+		text-decoration: none;
+		font-weight: bold;
+		border-radius: 5px;
+	}
+
+	.testimonials {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 20px;
+		justify-content: center;
+		margin-top: 20px;
+	}
+
+	.testimonial {
+		background: #112240;
+		padding: 20px;
+		border-radius: 10px;
+		max-width: 400px;
+		text-align: center;
+		font-style: italic;
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+	}
+
+	.project:hover {
+		transform: scale(1.05);
+	}
+
+	.blog-container {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 20px;
+		justify-content: center;
+		margin-top: 20px;
+	}
+
+	.blog-post {
+		background: #112240;
+		padding: 20px;
+		border-radius: 10px;
+		max-width: 400px;
+		text-align: left;
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+	}
+
+	.blog-post h3 {
+		color: #64ffda;
+		margin-bottom: 10px;
+	}
+
+	.blog-post a {
+		display: inline-block;
+		margin-top: 10px;
+		color: #64ffda;
+		text-decoration: none;
+		font-weight: bold;
+	}
+
+	p a {
+		text-decoration: none;
+		color: #64ffda;
+		padding: 20px;
+	}
+
+	.contact-form {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		margin-top: 20px;
+	}
+
+	.contact-form input,
+	.contact-form textarea {
+		padding: 10px;
+		border: 1px solid #64ffda;
+		background: transparent;
+		color: white;
+		border-radius: 5px;
+		font-size: 1em;
+	}
+
+	.services-list {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 20px;
+		text-align: center;
+		margin-top: 20px;
+	}
+
+	.service {
+		background: #112240;
+		padding: 20px;
+		border-radius: 10px;
+		transition: 0.3s;
+	}
+
+	.service i {
+		font-size: 40px;
+		color: #64ffda;
+		margin-bottom: 10px;
+	}
+
+	.service h3 {
+		margin-bottom: 10px;
+	}
+
+	.service:hover {
+		transform: translateY(-5px);
+		background: #0a192f;
+	}
+
+	.contact-form button {
+		background: #64ffda;
+		color: #0a192f;
+		font-size: 1.2em;
+		padding: 10px;
+		border: none;
+		cursor: pointer;
+		border-radius: 5px;
+		transition: 0.3s;
+	}
+
+	.contact-form button:hover {
+		background: white;
+	}
+
+	.social-links {
+		margin-top: 15px;
+	}
+
+	.social-links a,
+	footer p {
+		display: inline-block;
+		margin: 0 10px;
+		color: #64ffda;
+		font-size: 24px;
+		transition: color 0.3s;
+		text-decoration: none;
+	}
+
+	.social-links a:hover {
+		color: #ffffff;
+	}
+
+	footer {
+		justify-content: space-around;
+		padding: 20px;
+		margin-top: 30px;
+		display: flex;
+		background: #112240;
+	}
+      @keyframes rotateBorder {
+        0% { border-color: #64ffda; }
+        25% { border-color: #00bcd4; }
+        50% { border-color: #ff9800; }
+        75% { border-color: #e91e63; }
+        100% { border-color: #64ffda; }
+    }
+    .project-link {
+        display: inline-block;
+        padding: 10px 20px;
+        border: 1px solid #64ffda;
+        border-radius: 5px;
+        text-decoration: none;
+        color: #64ffda;
+        transition: border-color 1s linear; /* Smooth transition */
+    }
+
+    .project-link:hover {
+        border-color: #00bcd4; /* Change border color on hover */
+    }
+	@media screen and (max-width: 768px) {
+		.hero-about-container {
+			flex-direction: column;
+			text-align: center;
+			margin-top: 20vh;
+		}
+		#hero img {
+			width: 200px;
+		}
+		footer {
+			font-size: 2px;
+		}
+		nav {
+			margin-top: 20px;
+		}
+	}
+</style>
+
+<body>
+	<header>
+		<div class="logo">
+			<img src="images/witty.webp" alt="My profile" />&nbsp;&nbsp;
+        <h3>Jacob Witty</h3>
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <a href="#about"><i class="fas fa-user"></i> About</a>
+          </li>
+          <li>
+            <a href="#services"><i class="fas fa-cogs"></i> Services</a>
+          </li>
+          <li>
+            <a href="#portfolio"><i class="fas fa-briefcase"></i> Portfolio</a>
+          </li>
+          <li>
+            <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="hero-about-container">
+      <section id="hero">
+        <img src="images/pass.png" alt="My profile" />
+        <h1>Welcome to My Portfolio</h1>
+        <br />
+        <h4>
+          Providing IT solutions, online learning, business networking, and
+          more.
+        </h4>
+      </section>
+
+      <section id="about">
+        <h2>About Me</h2>
+        <p id="typed-about"></p>
+      </section>
+    </div>
+    <section id="services">
+      <h2>My Services</h2>
+      <div class="services-list">
+        <div class="service">
+          <i class="fas fa-paint-brush"></i>
+          <h3>Graphic Design</h3>
+          <p>
+            Creating visually appealing designs, including logos, flyers, and
+            branding materials.
+          </p>
+        </div>
+        <div class="service">
+          <i class="fas fa-code"></i>
+          <h3>Software Development</h3>
+          <p>
+            Building innovative software solutions tailored to business and
+            personal needs.
+          </p>
+        </div>
+        <div class="service">
+          <i class="fas fa-laptop-code"></i>
+          <h3>Web Development</h3>
+          <p>
+            Designing and developing professional, user-friendly websites for
+            businesses and individuals.
+          </p>
+        </div>
+        <div class="service">
+          <i class="fas fa-cogs"></i>
+          <h3>IT Consultancy</h3>
+          <p>
+            Providing expert advice on IT strategies, infrastructure, and
+            digital transformation.
+          </p>
+        </div>
+        <div class="service">
+          <i class="fas fa-music"></i>
+          <h3>Musician & Composer</h3>
+          <p>
+            Offering music composition, Notations, keyboard performances, and
+            music directives
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <h2>Projects Completed</h2>
+      <div class="portfolio-grid">
+        <div class="project">
+          <img src="images/logo.jpg" alt="Project 1" />
+          <h3>Business Website</h3>
+          <p>
+            My Business Website serves as a digital platform to showcase
+            products, services, and company information, enabling businesses to
+            connect with potential customers and clients online. The website is
+            designed to be visually appealing, responsive, and optimized for
+            search engines to maximize reach and engagement.
+          
+        </div>
+        <div class="project">
+          <img src="images/Voting.png" alt="Project 2" />
+          <h3>Online Voting System</h3>
+          <p>
+            The Online Voting System is a web-based platform designed to
+            facilitate secure and efficient voting for organizations,
+            institutions, or government bodies. The system allows registered
+            users to cast their votes digitally, ensuring transparency,
+            accuracy, and ease of access.
+          </p>
+        </div>
+        <div class="project">
+          <img src="images/church.png" alt="Project 3" />
+          <h3>University Church management System</h3>
+          <p>
+            The University Church Management System is a web-based platform
+            designed to help universities manage church activities, member
+            engagement, and administrative tasks efficiently. The system ensures
+            smooth coordination of events, finances, membership records, and
+            communication within the university church community.
+          </p>
+        </div>
+      </div>
+      <div class="portfolio-grid">
+        <div class="project">
+          <img src="images/zuk.jpg" alt="Project 4" />
+          <h3>Zukbits Online Company</h3>
+          <p>
+            A professional business website designed to sort out all your
+            questions about business development growth, hookups,
+            entrepreneurship, education & convenience digitally. Make it
+            happen..
+          </p>        
+        </div>
+        <div class="project">
+          <img src="images/mwingi.jpeg" alt="Project 5" />
+          <h3>CDF project</h3>
+          <p>
+            The CDF (Constituency Development Fund) Project Management System
+            for Bursaries is an online platform designed to streamline the
+            application, approval, disbursement, and tracking of bursary funds
+            allocated to students. The system enhances transparency,
+            accountability, and efficiency in the management of CDF bursary
+            funds.
+          </p>
+        </div>
+        <div class="project">
+          <img src="images/kjm.png" alt="Project 3" />
+          <h3>KJM Inventory Management System</h3>
+          <p>
+            The King Jesus Ministries Inventory Management System is designed to
+            help the ministry efficiently manage its assets, supplies, and other
+            inventory items. The system provides a structured way to track stock
+            levels, purchases, and usage, ensuring smooth operations within the
+            organization.
+          </p>
+        </div>        
+      </div>   <br><br>
+<center>
+    <h2>
+        <a class="project-link" href="https://jwprojects.fwh.is/" target="_blank">View All My Projects Here!</a>
+    </h2>
+</center>
+    </section>
+
+  <!-- Blog Section -->
+<section id="blog">
+    <h2>Latest Articles</h2>
+    <div class="blog-container">
+        <div class="blog-post">
+            <h3>How AI is Changing Web Development</h3>
+            <p>A look into how AI-powered tools are revolutionizing website design.</p>
+            <a href="#" class="read-more" data-title="How AI is Changing Web Development" 
+               data-content="<br><center> <img src='https://jacobwitty.fwh.is/images/back.jpg' alt='image' class='modal-img'></center>
+               <p>Artificial Intelligence (AI) is making waves in web development. Here's how:</p>
+               <ol>
+                      <li> <strong>Improving User Experience:</strong> AI-driven chatbots and virtual assistants provide real-time assistance to users, enhancing customer support and engagement. These tools can respond to queries, assist with navigation, and offer personalized recommendations.</li>
+<li><strong>Automating Repetitive Tasks:</strong> AI-powered tools can automate routine coding tasks, such as code generation, bug fixing, and testing. This allows developers to focus on more creative and complex aspects of web development.</li>
+<li><stron>Enhanced Design Tools:</strong> AI algorithms can analyze user behavior and preferences to create personalized website designs. Tools like Adobe Sensei and Figma use AI to suggest design elements, color schemes, and layouts that align with user preferences.</li>
+<li><strong>Optimizing Performance:</strong> AI can analyze website performance data to identify areas for improvement. This includes optimizing load times, enhancing security, and improving overall user experience. AI can also predict and prevent potential issues before they impact users.</li>
+<li><strong>Content Generation:</strong> AI can generate content, including text, images, and videos, tailored to specific audiences. This helps in creating dynamic and engaging websites with minimal manual effort.</li>
+<li><strong>SEO and Analytics:</strong> AI-driven SEO tools can optimize websites for search engines by analyzing keywords, backlinks, and other factors. Additionally, AI-powered analytics tools provide insights into user behavior, helping developers make data-driven decisions.</li>
+<li><strong>Personalization</strong>: AI can analyze user data to create personalized experiences for website visitors. This includes customized content, product recommendations, and targeted advertisements based on individual preferences and browsing history.</li>
+<li>In short, AI is not just enhancing the efficiency and productivity of web developers but also elevating the overall user experience, making websites more interactive, personalized, and responsive to user needs.</li> 
+               </ol>
+               <center><p>AI is truly transforming the industry, making development faster and smarter.</center></p>">
+               Read More
+            </a>
+        </div>
+        <div class="blog-post">
+            <h3>Top 10 Web Security Tips</h3>
+            <p>Protect your website with these essential security practices.</p>
+            <a href="#" class="read-more" data-title="Top 10 Web Security Tips"
+               data-content="<br><img src='https://jacobwitty.fwh.is/images/consult.jpg' alt='Web Security' class='modal-img'>
+               <p>Security is essential for any website. Follow these top 10 tips:</p>
+               <ol>
+                   <li><strong>Use Strong Passwords:</strong> 
+            <p>It's crucial to require users to create strong passwords that combine uppercase and lowercase letters, numbers, and special characters. Enforcing password policies can help mitigate the risk of brute-force attacks.</p>
+        </li>
+        <li><strong>Enable HTTPS:</strong> 
+            <p>Securing your website with SSL/TLS certificates ensures that all data transmitted between the user's browser and your server is encrypted. This helps protect sensitive information, such as login credentials and payment details, from being intercepted by malicious actors.</p>
+        </li>
+        <li><strong>Keep Software Up-to-Date:</strong> 
+            <p>Regularly updating your website's software, including content management systems (CMS), plugins, and libraries, is essential for patching known security vulnerabilities. Outdated software can be an easy target for hackers.</p>
+        </li>
+        <li><strong>Implement Secure Authentication:</strong> 
+            <p>Multi-factor authentication (MFA) adds an extra layer of security by requiring users to provide additional verification, such as a code sent to their mobile device, in addition to their password. This significantly reduces the risk of unauthorized access.</p>
+        </li>
+        <li><strong>Sanitize User Inputs:</strong> 
+            <p>Validating and sanitizing all user inputs helps prevent common web attacks, such as SQL injection and cross-site scripting (XSS). Ensure that input fields are properly validated, and any potentially harmful data is stripped out or encoded.</p>
+        </li>
+        <li><strong>Regular Backups:</strong> 
+            <p>Performing regular backups of your website and database ensures that you can quickly recover your data in case of a security breach, hardware failure, or other catastrophic events. Store backups in a secure, off-site location.</p>
+        </li>
+        <li><strong>Monitor and Analyze Logs:</strong> 
+            <p>Continuously monitoring and analyzing server logs can help you detect suspicious activities and potential threats. Set up automated alerts for unusual behavior, such as multiple failed login attempts or unexpected changes to files.</p>
+        </li>
+        <li><strong>Limit File Uploads:</strong> 
+            <p>Allowing users to upload files to your website can introduce security risks, such as malware or malicious scripts. Implement strict file upload restrictions, including file type and size limitations, and scan uploaded files for potential threats.</p>
+        </li>
+        <li><strong>Use a Web Application Firewall (WAF):</strong> 
+            <p>A WAF can help protect your website by filtering and monitoring incoming HTTP traffic. It can block malicious requests, such as SQL injection and XSS attacks, before they reach your server.</p>
+        </li>
+        <li><strong>Educate Users:</strong> 
+            <p>Educating your users and employees about best security practices is essential for maintaining a secure website. Provide training on recognizing phishing attempts, avoiding suspicious links, and practicing good password hygiene.</p>
+        </li>
+               </ol>
+               <p>By following these steps, your website will be more secure against cyber threats.</p>">
+               Read More
+            </a>
+        
+    </div>
+
+    <div class="blog-post">
+    <h3>The Evolving Landscape of Software Application Development</h3>
+    <p>Explore the key technologies and trends shaping modern software development.</p>
+    <a href="#" class="read-more" data-title="The Evolving Landscape of Software Application Development"
+       data-content="<br><img src='https://jacobwitty.fwh.is/images/graphic.jpg' alt='Software Development' class='modal-img'>
+       <p>Software application development is a dynamic and ever-evolving field. Here's a deeper dive:</p>
+       <ol>
+           <li><strong>Agile Methodologies:</strong>
+               <p>Emphasizing iterative development, collaboration, and continuous feedback. Agile methods like Scrum and Kanban are now standard practice.</p>
+           </li>
+           <li><strong>Cloud Computing:</strong>
+               <p>Platforms like AWS, Azure, and Google Cloud provide scalable infrastructure, enabling cloud-native development with containers and serverless functions.</p>
+           </li>
+           <li><strong>AI and Machine Learning:</strong>
+               <p>Integration of AI/ML automates tasks, personalizes experiences, and provides intelligent insights through chatbots and recommendation engines.</p>
+           </li>
+           <li><strong>Low-Code/No-Code Platforms:</strong>
+               <p>Democratizing development by enabling non-technical users to build applications with minimal coding.</p>
+           </li>
+           <li><strong>Mobile-First Development:</strong>
+               <p>Responsive design ensures seamless experiences across smartphones and tablets, prioritizing mobile user needs.</p>
+           </li>
+           <li><strong>Cybersecurity:</strong>
+               <p>Secure coding practices, vulnerability assessments, and penetration testing are crucial in an increasingly interconnected environment.</p>
+           </li>
+           <li><strong>DevOps and DevSecOps:</strong>
+               <p>Automation and collaboration between development and operations, with DevSecOps integrating security throughout the lifecycle.</p>
+           </li>
+           <li><strong>Microservices Architecture:</strong>
+               <p>Structuring applications as independent services enhances scalability, maintainability, and resilience.</p>
+           </li>
+           <li><strong>User Experience (UX):</strong>
+               <p>Focus on user needs, intuitive interfaces, and engaging experiences through research, prototyping, and usability testing.</p>
+           </li>
+           <li><strong>Future Trends:</strong>
+               <p>Expect increased automation through AI, advancements in cloud and edge computing, growth of low-code/no-code, and expanded IoT applications.</p>
+           </li>
+       </ol>
+       <p>By adapting to these trends, developers can create innovative and impactful software solutions.</p>">
+        Read More
+    </a>
+</div>
+</div>
+</section>
+
+<!-- Modal Structure -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h3 id="modal-title"></h3>
+        <div id="modal-body"></div>
+    </div>
+</div>
+
+
+
+    <!-- Combined Contact & Social Media Section -->
+    <section id="contact">
+      <h2>Contact Details</h2>
+      <center>
+        <p>Get in touch with me for collaborations, inquiries, or services.</p>
+      </center>
+      <div class="contact-info">
+        <p>
+          <i class="fas fa-phone"></i>&nbsp;Phone:
+          <a href="tel:+254768374497"> +254 768374497</a>
+        </p>
+        <p>
+          <i class="fas fa-envelope"></i>&nbsp;Email:
+          <a href="mailto:kaujacob4@gmail.com">kaujacob4@gmail.com</a>
+        </p>
+        <p>
+          <i class="fas fa-globe-americas"></i> &nbsp;Website:
+          <a href="https://wittyhighbrowtechnologies.kesug.com/"
+            >Witty Highbrow Technologies</a
+          >
+        </p>
+        <p><i class="fas fa-map-marker-alt"></i> Location: Nairobi, Kenya</p>
+      </div>
+
+     <form id="contact-form" class="contact-form">
+  <input type="text" id="name" placeholder="Your Name" required />
+  <input type="email" id="email" placeholder="Your Email" required />
+  <textarea id="message" placeholder="Your Message" required></textarea>
+  <button type="submit" class="btn">Send Message</button><br /><br />
+</form>
+
+
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div>
+            <h2>What Clients Say</h2>
+        </div>
+      <div class="testimonials">
+        <div class="testimonial">
+          <p>
+            "Great experience working with you! The website design exceeded my
+            expectations."
+          </p>
+          <h4>- John Mark</h4>
+        </div>
+        <div class="testimonial">
+          <p>
+            "It was enjoyable doing work with you!"
+          </p>
+          <h4>- Jane Omondi</h4>
+        </div>
+        <div class="testimonial">
+          <p>
+            "This is wonderful! keep going"
+          </p>
+          <h4>- Joseph Muluvi</h4>
+        </div>
+        <div class="testimonial">
+          <p>
+            "I like the projects!"
+          </p>
+          <h4>- Maggie Kiibu</h4>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+         
+        <a href="https://www.youtube.com/@Jacob_Witty" target="_blank">
+          <i class="fab fa-youtube"></i>
+        </a>        
+        <a href="https://web.facebook.com/James.Mwambwa" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://x.com/Jacob_witty4" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/jacob__witty/" target="_blank"
+          ><i class="fab fa-instagram"></i></a
+        >
+        <a href="https://www.linkedin.com/in/jacob-witty-b07a22349/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <div class="social-links">
+      <p>&copy; 2025 Jacob Witty. All Rights Reserved.</p></div>
+    </footer>
+
+    <script>
+      const aboutText =
+        "I am a web designer, content writer, and IT solutions provider with expertise in system security, AI integration, and business networking. I’m passionate about music and technological trends because I graduated in the same field. I enjoy collaborating with others and always seek ways to expand my knowledge and connect with people who share similar goals. Just a passionate hobbyist,music lover, tech enthusiast, always learning new things and connecting with others who share my passions.I’m a friendly and approachable person who loves meeting new people. I tend to be the one who listens and offers support but also enjoy having deep, meaningful conversations.";
+      let i = 0;
+      function typeEffect() {
+        if (i < aboutText.length) {
+          document.getElementById("typed-about").innerHTML =
+            aboutText.substring(0, i + 1) + "<span id='cursor'>|</span>";
+          i++;
+          setTimeout(typeEffect, 50);
+        } else {
+          document.getElementById("cursor").style.display = "none";
+        }
+      }
+ window.onload = typeEffect;
+
+  document.addEventListener("DOMContentLoaded", function () {
+    emailjs.init("fd8AssW6J5To9EUF0"); 
+
+    document.getElementById("contact-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      emailjs.send("service_a67fvms", "template_h5mjrjb", {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        message: document.getElementById("message").value,
+      })
+      .then(function(response) {
+        alert("Message sent successfully!");
+        document.getElementById("contact-form").reset();
+      }, function(error) {
+        alert("Failed to send message. Please try again.");
+        console.log(error);
+      });
+    });
+  });
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("modal");
+    const modalTitle = document.getElementById("modal-title");
+    const modalBody = document.getElementById("modal-body");
+    const closeModal = document.querySelector(".close-modal");
+
+    document.querySelectorAll(".read-more").forEach(link => {
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+            modalTitle.innerText = this.getAttribute("data-title");
+            modalBody.innerHTML = this.getAttribute("data-content");
+            modal.style.display = "flex";
+        });
+    });
+
+    closeModal.addEventListener("click", function () {
+        modal.style.display = "none";
+    });
+
+    window.addEventListener("click", function (e) {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+});
+
+
+</script>
+
+  </body>
+</html>
