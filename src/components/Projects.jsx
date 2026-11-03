@@ -1,7 +1,7 @@
 import React from "react";
 
 import votingImg from "../assets/Voting.jpg";
-import handupImg from "../assets/handup.png";
+import handupImg from "../assets/Handup.png";
 import highbrowImg from "../assets/WHT.png";
 import wittymartImg from "../assets/wittymart.png";
 import moodtrackerImg from "../assets/moodtracker.png";
