@@ -3,7 +3,7 @@
 A modern, responsive, and interactive personal portfolio website showcasing my work as a Full Stack Developer and UI/UX Designer. Built with a "Neo-Brutalist" design aesthetic, featuring a developer-focused typography (Fira Code), smooth Framer Motion animations, and a fully tabbed interface.
 
 ## Live Demo
-[Insert Link to your deployed Vercel/Render site here]
+[Click me to view the portfolio](https://jacob-mwambwa-portfolio.vercel.app/)
 
 ## Features
 
@@ -16,7 +16,7 @@ A modern, responsive, and interactive personal portfolio website showcasing my w
 *   **Working Contact Form:** Integrated with Formspree for seamless, serverless email delivery.
 *   **Responsive Design:** Fully optimized for mobile, tablet, and desktop viewing.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 **Frontend:**
 *   React.js (Vite)
@@ -26,10 +26,10 @@ A modern, responsive, and interactive personal portfolio website showcasing my w
 
 **Services & Tools:**
 *   Formspree (Contact Form handling)
-*   Vercel / Render (Hosting)
+*   Vercel (Hosting)
 *   Git & GitHub
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 src/
@@ -50,7 +50,7 @@ src/
 └── main.jsx         # React entry point
 ```
 
-## 💻 Running Locally
+## Running Locally
 
 To run this project locally on your machine, follow these steps:
 
@@ -77,7 +77,7 @@ To run this project locally on your machine, follow these steps:
 5. **Open your browser:**
    Navigate to `http://localhost:5173` (or the port specified in your terminal).
 
-## 📫 Contact
+## Contact
 
 *   **Email:** kaujacob4@gmail.com
 *   **LinkedIn:** [Jacob Mwambwa](https://www.linkedin.com/in/jacob-mwambwa-8b7296362)
