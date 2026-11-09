@@ -7,9 +7,17 @@ import wittymartImg from "../assets/wittymart.png";
 import moodtrackerImg from "../assets/moodtracker.png";
 import blogImg from "../assets/Blog.png";
 import chatImg from "../assets/chat.png";
+import moeImg from "../assets/moe-kitui-west.png"; // <-- ADD THIS IMAGE TO YOUR ASSETS
 
 const Projects = () => {
   const projectsList = [
+    {
+      title: "MOE Kitui West Data Portal",
+      description: "A comprehensive data collection and school registry management system for the Ministry of Education. Features dynamic form building, live submission tracking, Excel/CSV bulk imports, and automated PDF/Excel exports.",
+      image: moeImg, 
+      liveUrl: "https://moe-kitui-west.vercel.app/", 
+      githubUrl: "https://github.com/jacobkau/MOE-Kitui-West", 
+    },
     {
       title: "Witty Voting System",
       description: "A secure and scalable digital voting platform featuring real-time results, user authentication, and an intuitive admin dashboard.",
