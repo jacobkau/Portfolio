@@ -7,7 +7,7 @@ import wittymartImg from "../assets/wittymart.png";
 import moodtrackerImg from "../assets/moodtracker.png";
 import blogImg from "../assets/Blog.png";
 import chatImg from "../assets/chat.png";
-import moeImg from "../assets/moe-kitui-west.png"; // <-- ADD THIS IMAGE TO YOUR ASSETS
+import moeImg from "../assets/moe-kitui-west.png"; 
 
 const Projects = () => {
   const projectsList = [
